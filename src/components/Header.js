@@ -1,3 +1,4 @@
+// src/components/Header.js
 import React, { useState, useEffect, useRef } from 'react';
 import './Header.css';
 import { Link, useNavigate } from 'react-router-dom';
@@ -51,7 +52,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
+      <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`} aria-label="주 네비게이션">
         <ul className="nav-list">
           <li className="nav-item">
             <Link to="/" onClick={() => handleNavigation('/')}>Home</Link>
@@ -67,9 +68,10 @@ const Header = () => {
               More
             </button>
             <ul className={`dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
-              <li><Link to="/teams" onClick={() => handleNavigation('/teams')}>Teams</Link></li>
-              <li><Link to="/events" onClick={() => handleNavigation('/events')}>Events</Link></li>
-              <li><Link to="/community" onClick={() => handleNavigation('/community')}>Community</Link></li>
+              <li><Link to="/health-fitness" onClick={() => handleNavigation('/health-fitness')}>건강 및 체육 정보</Link></li>
+              <li><Link to="/accessibility" onClick={() => handleNavigation('/accessibility')}>접근성 향상</Link></li>
+              <li><Link to="/data-visualization" onClick={() => handleNavigation('/data-visualization')}>데이터 시각화</Link></li>
+              <li><Link to="/program-matching" onClick={() => handleNavigation('/program-matching')}>프로그램 매칭</Link></li>
             </ul>
           </li>
           
@@ -84,6 +86,7 @@ const Header = () => {
         onClick={toggleMobileMenu}
         aria-label="메인 메뉴 토글"
         aria-expanded={isMobileMenuOpen}
+        aria-controls="navigation-menu"
       >
         <span className="bar"></span>
         <span className="bar"></span>

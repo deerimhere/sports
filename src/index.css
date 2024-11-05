@@ -1,15 +1,62 @@
 /* src/index.css */
+
 :root {
-  --primary-color: #007BFF; /* 파란색 */
-  --secondary-color: #0056b3; /* 더 짙은 파란색 */
-  --light-color: #ADD8E6; /* 연한 파란색 */
-  --background-color: #f0f8ff; /* 아주 연한 파란색 */
-  --text-color: #333333; /* 기본 텍스트 색상 */
+  --primary-color: #ADD8E6; /* 연한 파란색으로 변경 */
+  --secondary-color: #B0C4DE; /* 보조 색상도 연한 파란색 계열로 변경 */
+  --light-color: #87CEFA; /* 더 연한 파란색 */
+  --background-color: #FFFFFF; /* 배경색을 화이트로 변경 */
+  --text-color: #333333; /* 기본 텍스트 색상 유지 */
+  --accent-color: #ADD8E6; /* 추가 액센트 색상 정의 */
+}
+
+/* 공통 스타일 유지 */
+body {
+  margin: 0;
+  font-family: 'BMDOHYEON', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color); /* 링크 색상을 연한 파란색으로 변경 */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--light-color); /* 호버 시 더 연한 파란색 */
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--light-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* src/index.css */
+
+@font-face {
+  font-family: '감탄로드돋움체';
+  src: url('./assets/fonts/감탄로드돋움체.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: '감탄로드돋움체', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
 }
